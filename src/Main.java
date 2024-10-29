@@ -2,13 +2,11 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        double ticket = 13676; // стоимость билета
-        byte rubles = 20; //количество рублей для одной мили
-        int miles; // бонусные мили
 
-        miles = (int) ticket / rubles;
+        BonusMilesService service = new BonusMilesService();
+        int price = 10_000; // стоимость билета
+        int miles = service.calculate(price);
 
-        System.out.println("Количество начисленных миль = " + miles);
-
+        System.out.println("Количество начисленных миль: " + miles);
     }
 }
